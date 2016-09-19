@@ -72,7 +72,7 @@ public class AutoPurgingImageCache: ImageRequestCache {
         let totalBytes: UInt64
         var lastAccessDate: NSDate
 
-        init(_ image: Image, identifier: String) {
+        init(image: Image, identifier: String) {
             self.image = image
             self.identifier = identifier
             self.lastAccessDate = NSDate()

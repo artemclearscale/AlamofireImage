@@ -96,7 +96,7 @@ public struct DynamicImageFilter: ImageFilter {
 
         - returns: The new `DynamicImageFilter` instance.
     */
-    public init(_ identifier: String, filter: Image -> Image) {
+    public init(identifier: String, filter: Image -> Image) {
         self.identifier = identifier
         self.filter = filter
     }
@@ -138,7 +138,7 @@ public struct DynamicCompositeImageFilter: CompositeImageFilter {
 
         - returns: The new `DynamicCompositeImageFilter` instance.
     */
-    public init(_ filters: [ImageFilter]) {
+    public init(filters: [ImageFilter]) {
         self.filters = filters
     }
 
@@ -149,7 +149,7 @@ public struct DynamicCompositeImageFilter: CompositeImageFilter {
 
         - returns: The new `DynamicCompositeImageFilter` instance.
     */
-    public init(_ filters: ImageFilter...) {
+    public init(filters: ImageFilter...) {
         self.init(filters)
     }
 }
