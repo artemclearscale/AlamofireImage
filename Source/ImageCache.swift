@@ -72,7 +72,7 @@ public class AutoPurgingImageCache: ImageRequestCache {
         let totalBytes: UInt64
         var lastAccessDate: NSDate
 
-        init(_ image: Image, identifier: String) {
+        init(image: Image, identifier: String) {
             self.image = image
             self.identifier = identifier
             self.lastAccessDate = NSDate()
@@ -185,7 +185,7 @@ public class AutoPurgingImageCache: ImageRequestCache {
     */
     public func addImage(image: Image, withIdentifier identifier: String) {
         dispatch_barrier_async(synchronizationQueue) {
-            let cachedImage = CachedImage(image, identifier: identifier)
+            let cachedImage = CachedImage(image:image, identifier: identifier)
 
             if let previousCachedImage = self.cachedImages[identifier] {
                 self.currentMemoryUsage -= previousCachedImage.totalBytes
